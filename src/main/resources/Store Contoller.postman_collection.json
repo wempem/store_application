@@ -248,7 +248,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/store/menu?store_id=6&menuName=Lazard Menu",
+					"raw": "localhost:8080/api/store/menu?store_id=5&menuName=Lazard Menu",
 					"host": [
 						"localhost"
 					],
@@ -261,7 +261,7 @@
 					"query": [
 						{
 							"key": "store_id",
-							"value": "6"
+							"value": "5"
 						},
 						{
 							"key": "menuName",
@@ -293,7 +293,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/store/menu/menuitem?store_id=6&description=Lazard&section=Dinner&price=1.99",
+					"raw": "localhost:8080/api/store/menu/menuitem?store_id=5&description=Lazard&section=Dinner&price=1.99",
 					"host": [
 						"localhost"
 					],
@@ -307,7 +307,7 @@
 					"query": [
 						{
 							"key": "store_id",
-							"value": "6"
+							"value": "5"
 						},
 						{
 							"key": "description",
@@ -358,7 +358,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/store/menu/1",
+					"raw": "localhost:8080/api/store/menu/5",
 					"host": [
 						"localhost"
 					],
@@ -367,7 +367,7 @@
 						"api",
 						"store",
 						"menu",
-						"1"
+						"5"
 					]
 				}
 			},
