@@ -32,11 +32,6 @@ public class StoreController {
         this.authService = authService;
     }
 
-    @GetMapping("/store/{id}")
-    public ResponseEntity<Store> getStoreById(@PathVariable Long id) {
-        return new ResponseEntity<>(storeService.getStoreById(id), HttpStatus.OK);
-    }
-
     @GetMapping("/store/menu/{id}")
     public ResponseEntity<List<MenuItem>> getStoreMenuById(@PathVariable Long id) {
         return new ResponseEntity<>(menuService.getMenuByStoreId(id, authService.isAdmin()), HttpStatus.OK);
@@ -53,10 +48,10 @@ public class StoreController {
     }
 
     @PostMapping("/store/menu/menuitem")
-    public ResponseEntity<MenuItem> addMenuitem(@RequestParam Long menu_id,
+    public ResponseEntity<MenuItem> addMenuitem(@RequestParam Long store_id,
                                             @RequestParam String description,
                                             @RequestParam String section,
                                             @RequestParam Double price) {
-        return new ResponseEntity<>(menuService.addMenuItem(menu_id, description, section, price), HttpStatus.OK);
+        return new ResponseEntity<>(menuService.addMenuItem(store_id, description, section, price), HttpStatus.OK);
     }
 }

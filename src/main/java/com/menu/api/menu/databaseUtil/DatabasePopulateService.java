@@ -30,7 +30,6 @@ public class DatabasePopulateService {
 
     public void execute() {
         populateStoreAndMenuRepos();
-
         populateUserRepo();
     }
 

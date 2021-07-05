@@ -1,6 +1,8 @@
 package com.menu.api.menu.store;
 
 import com.menu.api.menu.authentication.AuthService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,6 +10,8 @@ import java.time.LocalDateTime;
 
 @Service
 public class StoreService {
+    private static final Logger logger = LoggerFactory.getLogger(StoreService.class);
+
     private final StoreRepository storeRepository;
     private final AuthService authService;
 
@@ -22,7 +26,13 @@ public class StoreService {
 
     public Store addStore(String name) {
         Store store = new Store("Name", LocalDateTime.now(),null, authService.getUser().getId(),null,false,null);
-        storeRepository.save(store);
+
+        try {
+            storeRepository.save(store);
+        } catch (Exception e) {
+            logger.error("There was an issue while saving the store", e);
+            throw e;
+        }
         return store;
     }
 }
