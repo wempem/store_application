@@ -25,7 +25,7 @@ public class StoreService {
     }
 
     public Store addStore(String name) {
-        Store store = new Store("Name", LocalDateTime.now(),null, authService.getUser().getId(),null,false,null);
+        Store store = new Store(name, LocalDateTime.now(),null, authService.getUser().getId(),null,false,null);
 
         try {
             storeRepository.save(store);
